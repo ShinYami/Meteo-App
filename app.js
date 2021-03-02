@@ -10,14 +10,14 @@ if(navigator.geolocation) {
         const long = position.coords.longitude;
         const lat = position.coords.latitude;
         APICall(long, lat);
-        prettyDate2();
+        
     }, () => {
         alert('Cannot work without geolocalisation');
     })
 }
 
 function APICall(long, lat) {
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely&units=metric&lang=fr&appid=${token}`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely&units=metric&lang=en&appid=${token}`)
     .then((reponse) => {
         return reponse.json();
     })
@@ -27,13 +27,5 @@ function APICall(long, lat) {
         city.innerText = data.timezone;
         temp.innerText = `${(data.current.temp)}°`;
 
-    
     })
-}
-
-function prettyDate2(time){
-    let date = new Date(parseInt(time));
-    let localeSpecificTime = date.toLocaleTimeString();
-    time.innerText = localeSpecificTime;
-    return localeSpecificTime.replace(/:\d+ /, ' ');
 }
