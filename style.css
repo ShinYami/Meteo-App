@@ -19,6 +19,8 @@ body {
     padding: 2rem;
     display: flex;
     flex-wrap: wrap;
+    max-width: 1400px;
+    margin: auto;
 }
 
 .info {
