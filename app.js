@@ -3,6 +3,7 @@ const token = 'a76d54bcbabc1f1ebc1f6eaea18f6ec7';
 const city = document.getElementById('City');
 const temp = document.getElementById('Temp');
 const time = document.getElementById('Time');
+const date = document.getElementById('Date');
 const wind = document.getElementById('Wind');
 
 
@@ -43,3 +44,12 @@ function APICall(long, lat) {
 
     })
 }
+
+function timeReload () {
+    let event = new Date();
+        time.innerText = event.toLocaleTimeString('en-US', {timeStyle: 'medium'});
+        date.innerText = event.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    setTimeout(timeReload, 1000);
+}
+
+timeReload();

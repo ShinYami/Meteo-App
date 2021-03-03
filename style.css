@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans&display=swap%27');
+
 * {
     box-sizing: border-box;
 }
@@ -10,6 +12,7 @@ body {
     justify-content: center;
     flex-direction: column;
     background-size: cover;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .opacity {
