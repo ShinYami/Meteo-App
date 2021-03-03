@@ -29,20 +29,24 @@ body {
 
 #City {
     font-size: 4rem;
+    text-shadow: 0px 5px 5px black;
 }
 
 #Time {
     font-size: 3rem;
+    text-shadow: 0px 2px 2px black;
 }
 
 #Date {
     font-size: 2rem;
+    text-shadow: 0px 2px 2px black;
 }
 
 .today {
-    margin-top: 150px;
-    margin-left: 25vw;
     font-size: 1.5rem;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 150px;
 }
 
 .desIcon {
@@ -55,7 +59,8 @@ img#wicon {
 }
 
 .tableau {
-    width: 100%;
+    max-width: 70%;
+    margin: auto;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -68,5 +73,13 @@ img#wicon {
 .block3,
 .block4,
 .block5 {
-    padding: 50px;
+    padding: 30px;
+}
+
+@media (max-width: 1181px) {
+    .today {
+        margin-top: 20px;
+        margin-left: 25vw;
+        max-width: 40%;
+    }
 }
