@@ -29,23 +29,15 @@ function APICall(long, lat) {
 
         city.innerText = data.timezone;
         temp.innerText = `${(data.current.temp)}°`;
-        var iconcode = data.current.weather[0].icon;
+        let iconcode = data.current.weather[0].icon;
         console.log(iconcode)
-        var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
+        let iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
         image.setAttribute('src', iconurl);
         wind.innerText = `${parseInt((data.current.wind_speed)*3.6)} km/h`;
         let night;
         Math.round(new Date() / 1000) >= data.current.sunset && Math.round(new Date() / 1000) <= data.current.sunrise ? night = 1 : night = 0;
         // console.log(night);
-        if (night === 1)
-        {
-            document.body.style.backgroundImage = "url(./Assets/IMG/night.jfif)";
-        }
-        else if (night === 0)
-        {
-            document.body.style.backgroundImage = "url(./Assets/IMG/day.jpeg)";
-        }
-
+        (night === 1) ? document.body.style.backgroundImage = "url(./Assets/IMG/night.jfif)" : document.body.style.backgroundImage = "url(./Assets/IMG/day.jpeg)";
     })
 }
 

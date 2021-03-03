@@ -7,10 +7,6 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
     background-size: cover;
     font-family: 'Merriweather Sans', sans-serif;
 }
@@ -22,13 +18,43 @@ body {
 }
 
 .container {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
     padding: 2rem;
+    color: white;
+    display: flex;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0 0 100px;
 }
 
 span {
     padding: 10px;
 }
+
+#City {
+    font-size: 4rem;
+}
+
+#Time {
+    color: white;
+    font-size: 3rem;
+}
+
+#Date {
+    font-size: 2rem;
+}
+
+.today {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 150px;
+    margin-left: 200px;
+    font-size: 1.5rem;
+}
+
+#Temp {}
+
+#Wind {}
