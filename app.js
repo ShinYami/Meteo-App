@@ -1,5 +1,4 @@
 const token = 'a76d54bcbabc1f1ebc1f6eaea18f6ec7';
-
 const city = document.getElementById('City');
 const today = document.getElementById('Today');
 const temp = document.getElementById('Temp');
@@ -23,7 +22,6 @@ const day5 = document.getElementById('jour5');
 const temp5 = document.getElementById('temp5');
 const wicon5 = document.getElementById('wicon5');
 
-
 if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
         const long = position.coords.longitude;
@@ -46,9 +44,7 @@ function APICall(long, lat) {
         city.innerText = data.timezone;
         today.innerText = "\n" + data.current.weather[0].description.charAt(0).toUpperCase() + data.current.weather[0].description.slice(1); 
         temp.innerText = ` ${(parseInt(data.current.temp))}°C`;
-        let iconcode = data.current.weather[0].icon;
-        let iconurl = "./Assets/IMG/icons/" + iconcode + ".svg";
-        image.setAttribute('src', iconurl);
+        image.setAttribute('src', "./Assets/IMG/icons/" + data.current.weather[0].icon + ".svg");
         wind.innerText = ` ${parseInt((data.current.wind_speed)*3.6)} km/h`;
 
         let night;
@@ -66,46 +62,30 @@ function APICall(long, lat) {
                 document.body.style.backgroundImage = "url(./Assets/IMG/colday.webp)";
         }
 
-    const currentDay = new Date();
-    const day1 = new Date(currentDay);
-    day1.setDate(day1.getDate() +1);
-    jour1.innerText = day1.toLocaleDateString('en-US', { weekday: 'long'});
-    temp1.innerText = data.daily[0].weather[0].description.charAt(0).toUpperCase() + data.daily[0].weather[0].description.slice(1);
-    let iconcode1 = data.daily[0].weather[0].icon;
-    let iconurl1 = "./Assets/IMG/icons/" + iconcode1 + ".svg";
-    wicon1.setAttribute('src', iconurl1);
+    let day1 = new Date();
+    day1.setDate(day1.getDate() + 1);
+    jour1.innerText = day1.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[0].weather[0].description.charAt(0).toUpperCase() + data.daily[0].weather[0].description.slice(1); 
+    wicon1.setAttribute('src', "./Assets/IMG/icons/" + data.daily[0].weather[0].icon + ".svg");
 
-    const day2 = new Date(currentDay);
-    day2.setDate(day1.getDate() + 1);
-    jour2.innerText = day2.toLocaleDateString('en-US', { weekday: 'long'});
-    temp2.innerText = data.daily[1].weather[0].description.charAt(0).toUpperCase() + data.daily[1].weather[0].description.slice(1);
-    let iconcode2 = data.daily[1].weather[0].icon;
-    let iconurl2 = "./Assets/IMG/icons/" + iconcode2 + ".svg";
-    wicon2.setAttribute('src', iconurl2);
+    let day2 = new Date();
+    day2.setDate(day2.getDate() + 2);
+    jour2.innerText = day2.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[1].weather[0].description.charAt(0).toUpperCase() + data.daily[1].weather[0].description.slice(1);
+    wicon2.setAttribute('src', "./Assets/IMG/icons/" + data.daily[1].weather[0].icon + ".svg");
 
-    const day3 = new Date(currentDay);
-    day3.setDate(day1.getDate() + 2);
-    jour3.innerText = day3.toLocaleDateString('en-US', { weekday: 'long'});
-    temp3.innerText = data.daily[2].weather[0].description.charAt(0).toUpperCase() + data.daily[2].weather[0].description.slice(1);
-    let iconcode3 = data.daily[2].weather[0].icon;
-    let iconurl3 = "./Assets/IMG/icons/" + iconcode3 + ".svg";
-    wicon3.setAttribute('src', iconurl3);
+    let day3 = new Date();
+    day3.setDate(day3.getDate() + 3);
+    jour3.innerText = day3.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[2].weather[0].description.charAt(0).toUpperCase() + data.daily[2].weather[0].description.slice(1);
+    wicon3.setAttribute('src', "./Assets/IMG/icons/" + data.daily[2].weather[0].icon + ".svg");
 
-    const day4 = new Date(currentDay);
-    day4.setDate(day1.getDate() + 3);
-    jour4.innerText = day4.toLocaleDateString('en-US', { weekday: 'long'});
-    temp4.innerText = data.daily[3].weather[0].description.charAt(0).toUpperCase() + data.daily[3].weather[0].description.slice(1);
-    let iconcode4 = data.daily[3].weather[0].icon;
-    let iconurl4 = "./Assets/IMG/icons/" + iconcode4 + ".svg";
-    wicon4.setAttribute('src', iconurl4);
+    let day4 = new Date();
+    day4.setDate(day4.getDate() + 4);
+    jour4.innerText = day4.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[3].weather[0].description.charAt(0).toUpperCase() + data.daily[3].weather[0].description.slice(1);
+    wicon4.setAttribute('src', "./Assets/IMG/icons/" + data.daily[3].weather[0].icon + ".svg");
 
-    const day5 = new Date(currentDay);
-    day5.setDate(day1.getDate() + 4);
-    jour5.innerText = day5.toLocaleDateString('en-US', { weekday: 'long'});
-    temp5.innerText = data.daily[3].weather[0].description.charAt(0).toUpperCase() + data.daily[3].weather[0].description.slice(1);
-    let iconcode5 = data.daily[4].weather[0].icon;
-    let iconurl5 = "./Assets/IMG/icons/" + iconcode5 + ".svg";
-    wicon5.setAttribute('src', iconurl5);
+    let day5 = new Date();
+    day5.setDate(day5.getDate() + 5);
+    jour5.innerText = day5.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[3].weather[0].description.charAt(0).toUpperCase() + data.daily[3].weather[0].description.slice(1); 
+    wicon5.setAttribute('src', "./Assets/IMG/icons/" + data.daily[4].weather[0].icon + ".svg");
 
     timeReload();
         
@@ -118,4 +98,3 @@ function timeReload () {
         date.innerText = event.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     setTimeout(timeReload, 1000);
 }
-
