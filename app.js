@@ -2,6 +2,7 @@ const token = 'a76d54bcbabc1f1ebc1f6eaea18f6ec7';
 
 const city = document.getElementById('City');
 const temp = document.getElementById('Temp');
+const image = document.getElementById('wicon');
 const time = document.getElementById('Time');
 const date = document.getElementById('Date');
 const wind = document.getElementById('Wind');
@@ -28,8 +29,11 @@ function APICall(long, lat) {
 
         city.innerText = data.timezone;
         temp.innerText = `${(data.current.temp)}°`;
+        var iconcode = data.current.weather[0].icon;
+        console.log(iconcode)
+        var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
+        image.setAttribute('src', iconurl);
         wind.innerText = `${parseInt((data.current.wind_speed)*3.6)} km/h`;
-
         let night;
         Math.round(new Date() / 1000) >= data.current.sunset && Math.round(new Date() / 1000) <= data.current.sunrise ? night = 1 : night = 0;
         // console.log(night);
