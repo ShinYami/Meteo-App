@@ -11,11 +11,14 @@ body {
     font-family: 'Merriweather Sans', sans-serif;
     overflow: hidden;
     color: white;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .container {
     padding: 2rem;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .info {
@@ -38,10 +41,31 @@ body {
 
 .today {
     margin-top: 150px;
-    margin-left: 200px;
+    margin-left: 25vw;
     font-size: 1.5rem;
 }
 
 .desIcon {
     display: inline-flex;
+}
+
+
+img#wicon {
+    width: 100px;
+}
+
+.tableau {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.block1,
+.block2,
+.block3,
+.block4,
+.block5 {
+    padding: 50px;
 }
