@@ -9,10 +9,10 @@ body {
     padding: 0;
     background-size: cover;
     font-family: 'Merriweather Sans', sans-serif;
-    overflow: hidden;
     color: white;
     background-repeat: no-repeat;
     height: 100vh;
+    text-shadow: 0px 5px 5px black;
 }
 
 .container {
