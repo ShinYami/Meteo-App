@@ -1,6 +1,7 @@
 const token = 'a76d54bcbabc1f1ebc1f6eaea18f6ec7';
 
 const city = document.getElementById('City');
+const today = document.getElementById('Today');
 const temp = document.getElementById('Temp');
 const image = document.getElementById('wicon');
 const time = document.getElementById('Time');
@@ -28,16 +29,30 @@ function APICall(long, lat) {
         console.log(data);
 
         city.innerText = data.timezone;
-        temp.innerText = `${(data.current.temp)}°`;
+        today.innerText = "\n" + data.current.weather[0].description.charAt(0).toUpperCase() + data.current.weather[0].description.slice(1); 
+        temp.innerText = ` ${(parseInt(data.current.temp))}°C`;
         let iconcode = data.current.weather[0].icon;
         console.log(iconcode)
         let iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
         image.setAttribute('src', iconurl);
-        wind.innerText = `${parseInt((data.current.wind_speed)*3.6)} km/h`;
+        wind.innerText = ` ${parseInt((data.current.wind_speed)*3.6)} km/h`;
         let night;
         Math.round(new Date() / 1000) >= data.current.sunset && Math.round(new Date() / 1000) <= data.current.sunrise ? night = 1 : night = 0;
         // console.log(night);
-        (night === 1) ? document.body.style.backgroundImage = "url(./Assets/IMG/night.jfif)" : document.body.style.backgroundImage = "url(./Assets/IMG/day.jpeg)";
+        data.current.temp = -8;
+        if (night === 1)
+        {
+            document.body.style.backgroundImage = "url(./Assets/IMG/night.jfif)";
+            if (data.current.temp < 0)
+                document.body.style.backgroundImage = "url(./Assets/IMG/coldnight.jpeg)";
+        }
+        else if (night === 0)
+        {
+            document.body.style.backgroundImage = "url(./Assets/IMG/day.jpeg)";
+            if (data.current.temp < 0)
+                document.body.style.backgroundImage = "url(./Assets/IMG/colday.webp)";
+
+        }
     })
 }
 

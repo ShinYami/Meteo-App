@@ -8,22 +8,27 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="opacity">
+
       <div class="container">
+
         <div class="info">
           <h1 id="City">Nom de la ville</h1>
           <span id="Time">Heure</span>
           <span id="Date">Date</span>
         </div>
+
         <div class="today">
-          <p>Today</p>
-          <span id="currentTemp">temps</span>
-          <span>Temp:</span><span id="Temp">Température</span>
-          <span>WindSpeed</span><span id="Wind">Wind speed</span>
-          <div id="icon"></div><img id="wicon" src="" alt="Weather icon" /></div>
+         <div class="desIcon">
+          <p>Today: <span id="Today">Description</span></p>
+          <img id="wicon" src="" alt="Weather icon"/>
+         </div>
+          <div>Temp: <span id="Temp">Température</span></div>
+          <div>WindSpeed: <span id="Wind">Wind speed</span></div>
         </div>
+
       </div>
-    </div>
+
     <script src="./app.js"></script>
+
   </body>
 </html>
