@@ -66,26 +66,31 @@ function APICall(long, lat) {
     day1.setDate(day1.getDate() + 1);
     jour1.innerText = day1.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[0].weather[0].description.charAt(0).toUpperCase() + data.daily[0].weather[0].description.slice(1); 
     wicon1.setAttribute('src', "./Assets/IMG/icons/" + data.daily[0].weather[0].icon + ".svg");
+    temp1.innerText = ` ${(parseInt(data.daily[0].temp.day))}°C`;
 
     let day2 = new Date();
     day2.setDate(day2.getDate() + 2);
     jour2.innerText = day2.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[1].weather[0].description.charAt(0).toUpperCase() + data.daily[1].weather[0].description.slice(1);
     wicon2.setAttribute('src', "./Assets/IMG/icons/" + data.daily[1].weather[0].icon + ".svg");
+    temp2.innerText = ` ${(parseInt(data.daily[1].temp.day))}°C`;
 
     let day3 = new Date();
     day3.setDate(day3.getDate() + 3);
     jour3.innerText = day3.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[2].weather[0].description.charAt(0).toUpperCase() + data.daily[2].weather[0].description.slice(1);
     wicon3.setAttribute('src', "./Assets/IMG/icons/" + data.daily[2].weather[0].icon + ".svg");
+    temp3.innerText = ` ${(parseInt(data.daily[2].temp.day))}°C`;
 
     let day4 = new Date();
     day4.setDate(day4.getDate() + 4);
     jour4.innerText = day4.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[3].weather[0].description.charAt(0).toUpperCase() + data.daily[3].weather[0].description.slice(1);
     wicon4.setAttribute('src', "./Assets/IMG/icons/" + data.daily[3].weather[0].icon + ".svg");
+    temp4.innerText = ` ${(parseInt(data.daily[3].temp.day))}°C`;
 
     let day5 = new Date();
     day5.setDate(day5.getDate() + 5);
     jour5.innerText = day5.toLocaleDateString('en-US', { weekday: 'long'}) + ": \n" + data.daily[3].weather[0].description.charAt(0).toUpperCase() + data.daily[3].weather[0].description.slice(1); 
     wicon5.setAttribute('src', "./Assets/IMG/icons/" + data.daily[4].weather[0].icon + ".svg");
+    temp5.innerText = ` ${(parseInt(data.daily[4].temp.day))}°C`;
 
     timeReload();
         
