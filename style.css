@@ -60,6 +60,10 @@ img#wicon {
     width: 100px;
 }
 
+.temp {
+    margin-bottom: 10px;
+}
+
 .tableau {
     max-width: 70%;
     margin: auto;
@@ -77,6 +81,13 @@ img#wicon {
 .block5 {
     padding: 30px;
 }
+
+.icone {
+    width: 100px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
 
 @media (max-width: 1181px) {
     .today {
