@@ -46,8 +46,9 @@ function APICall(long, lat) {
         temp.innerText = ` ${(parseInt(data.current.temp))}°C`;
         image.setAttribute('src', "./Assets/IMG/icons/" + data.current.weather[0].icon + ".svg");
         wind.innerText = ` ${parseInt((data.current.wind_speed)*3.6)} km/h`;
-
+    
         let night;
+        
         Math.round(new Date() / 1000) >= data.current.sunset && Math.round(new Date() / 1000) <= data.current.sunrise ? night = 1 : night = 0;
         if (night === 1)
         {
@@ -97,7 +98,7 @@ function APICall(long, lat) {
     })
 }
 
-function timeReload () {
+let timeReload = () => {
     let event = new Date();
         time.innerText = event.toLocaleTimeString('en-US', {timeStyle: 'medium'});
         date.innerText = event.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
